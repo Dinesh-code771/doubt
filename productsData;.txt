@@ -1,0 +1,35 @@
+let products=[
+   {
+       id:20221,
+       name:"Hair-Oil",
+       cost: 125,
+       gst: 5,
+       discount:10
+   },
+   {
+    id:20222,
+    name:"Protein-powde",
+    cost: 1000,
+    gst: 5,
+    discount:15
+},
+{
+    id:20223,
+    name:"Mac-Book",
+    cost: 12500,
+    gst: 5,
+    discount:50
+},
+{
+    id:20225,
+    name:"Chintal",
+    cost: 139,
+    gst: 5,
+    discount:10
+}
+];
+
+export let getProducts = ()=>{
+    return products;
+}
+

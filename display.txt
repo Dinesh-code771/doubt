@@ -1,0 +1,47 @@
+import React, { Component, useEffect, useState } from "react";
+import { getProducts } from "./ProductsData";
+const DisplayItems = () => {
+  const [products, setProducts] = useState([]);
+  const handleClick = () => {
+    let obj = {
+      id: 2022,
+      name: "I-phone",
+      cost: 1000,
+      gst: 5,
+      discount: 15,
+    };
+    console.log(products);
+    getProducts().push(obj);
+    setProducts(getProducts);
+    console.log(products);
+  };
+  useEffect(() => {
+    setProducts(getProducts);
+    console.log(products);
+  });
+  return (
+    <div className="products">
+      <div className="container">
+        <button onClick={handleClick} className="btn btn-success">
+          Add-Product
+        </button>
+        <div className="row row-cols-2">
+          {products.map((item) => {
+            return (
+              <div key={item.id} className="col">
+                {item.name}
+                <p>{item.cost}</p>
+                <p>{item.gst}</p>
+                <p>{item.discount}</p>
+                <button className="btn btn-primary">Delete</button>
+                <button className="btn btn-secondary">Update</button>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DisplayItems;
